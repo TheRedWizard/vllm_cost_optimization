@@ -1,0 +1,32 @@
+Started today by refreshing all my ollama models
+
+first i reset ollama since i last used it
+rm -rf ~/.ollama
+
+and i removed whatever service was running it.  I now run it with
+ollama serve
+
+Which dies on ctrl-c or when i shut the laptop.  (which is what i wanted)
+
+then pulled the following
+
+ollama pull qwen3:8b
+ollama pull qwen2.5-coder:7b
+ollama pull mistral-nemo:latest
+ollama pull deepseek-r1:14b
+ollama pull qwen2.5vl:7b
+ollama pull bge-m3:latest
+
+AI slop descriptions 
+
+qwen3:8b — Fast daily-driver for general reasoning, chat, planning, and “talk it through” work.
+
+qwen2.5-coder:7b — Primary coding model for writing, refactoring, debugging, and explaining code (Go, Python, Rust, SQL).
+
+mistral-nemo:latest — Long-context analysis: summarize large docs, logs, transcripts, or pasted files.
+
+deepseek-r1:14b — Slow, careful “think hard” mode for architecture decisions, trade-offs, and complex reasoning.
+
+qwen2.5vl:7b — Vision model for screenshots, diagrams, documents, and image-based reasoning.
+
+bge-m3:latest — Embeddings for RAG, semantic search, clustering, and analytics over text.

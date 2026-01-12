@@ -1,0 +1,44 @@
+backend: ollama
+
+endpoints:
+  ollama:
+    base_url: "http://localhost:11434/v1"
+    api_key: "none"
+    
+    # Default: no max_tokens (model decides)
+    # If set, thinking models multiply by their factor
+    default_max_tokens: null
+    
+    # Chat/completion models
+    chat_models:
+      # Standard models - fast, direct responses
+      - name: qwen2.5-coder:7b    # Write code → optimized for programming tasks
+        thinking: false
+        
+      - name: mistral-nemo:latest # Read a lot → 128k context window
+        thinking: false
+        
+      - name: qwen2.5vl:7b        # See images → vision-language model
+        thinking: false
+      
+      # Thinking models - need extra tokens for reasoning
+      - name: qwen3:8b            # Think fast → general purpose with reasoning
+        thinking: true
+        thinking_budget: 2048     # Extra tokens reserved for thinking
+        
+      - name: deepseek-r1:14b     # Think deeply → chain-of-thought reasoning
+        thinking: true
+        thinking_budget: 4096     # R1 thinks more extensively
+    
+    # Embedding models
+    embedding_models:
+      - name: nomic-embed-text:latest  # Search meaning → fast, 768 dims, 8k context
+      - name: bge-m3:latest            # Search meaning → multilingual, 1024 dims
+
+database:
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "vllm"
+    user: "vllm_user"
+    password: "vllm_pass"

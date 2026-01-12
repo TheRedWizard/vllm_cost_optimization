@@ -1,0 +1,17 @@
+Ok, since we are going to build this based off vllm.  We'll start here
+https://docs.vllm.ai/en/latest/
+
+It seems they don't support my mac, so we'll start with CPU to get everything working, then we'll move to GPU on AWS later.
+
+Let's start by installing uv instead of venv, because the vllm user guide recommends it.
+
+Ok, so, vllm doesn't really work exactly on osx.  So, we're going to go with a 3 part approach (ollama, llama.cpp, and vllm (cpu)) for local development.
+
+Ok, so, i already had ollama installed, veresion 0.12.x  and there is a 0.13.x now, upgrading wasn't clear.
+
+brew update
+brew upgrade ollama
+
+seemed to work.
+
+
