@@ -16,7 +16,7 @@ A framework for cheap, reliable, production-grade LLM inference with full audita
 
 ```bash
 # Clone repo and run setup
-git clone https://github.com/your-repo/vllm_cost_optimization.git
+git clone https://github.com/TheRedWizard/vllm_cost_optimization.git
 cd vllm_cost_optimization
 ./infra/setup_ec2.sh
 ```
